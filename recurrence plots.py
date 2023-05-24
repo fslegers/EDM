@@ -24,18 +24,21 @@ def recurrence_plot(ts, time_points, delay = 1, eps = 0.05, filename = "rp"):
     plt.imshow(ts_rp[0], cmap = "binary", origin = "lower")
     plt.title("Recurrence Plot", fontsize = 18)
     plt.tight_layout()
-    plt.show()
 
     # save figure
-    filename =
+    filename = "Figures/" + filename
     plt.savefig(filename)
+
+    # show figure
+    plt.show()
+
 
 if __name__ == "__main__":
 
     # Create a toy time series using the sine function
     time_points = np.linspace(0, 4 * np.pi, 1000)
-    x = np.exp(time_points)
+    x = np.sin(time_points)
     X = np.array([x])
 
     # Create recurrence
-    recurrence_plot(X, time_points, eps = np.pi/18, filename = "exp")
+    recurrence_plot(X, time_points, eps = np.pi/18, filename = "sin")
