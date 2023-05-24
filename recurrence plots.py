@@ -26,7 +26,7 @@ def recurrence_plot(ts, time_points, delay = 1, eps = 0.05, filename = "rp"):
     plt.tight_layout()
 
     # save figure
-    filename = "Figures/" + filename
+    filename = "Figures/rp_" + filename
     plt.savefig(filename)
 
     # show figure
